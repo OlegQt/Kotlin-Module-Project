@@ -1,5 +1,5 @@
 class Note(val name: String) {
-    val text = ""
+    var text = ""
 
     val showMainMenu: () -> Unit = {
         var str = ("-------ЗАМЕТКА $name-------\n")
@@ -12,9 +12,14 @@ class Note(val name: String) {
 
     val choose: (n: Int) -> Unit = { n ->
         when (n) {
-            0 -> ScreenMode.mode = ScreenMode.NOTE_CREATE
+            0 -> ScreenMode.mode = ScreenMode.NOTE_EDIT
             1 -> ScreenMode.mode = ScreenMode.NOTE_LIST
             else -> println("Заметки с номером $n нет в списке")
         }
+    }
+
+    val addText: (text: String) -> Unit = { text ->
+        this.text+="$text\n"
+        ScreenMode.mode = ScreenMode.NOTE_SHOW
     }
 }

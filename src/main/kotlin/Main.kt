@@ -28,6 +28,9 @@ fun main() {
                     archiveList.activeNoteList.activeNote.choose
                 )
             }
+            ScreenMode.NOTE_EDIT ->{
+                Input().create({println("Дополните заметку")},archiveList.activeNoteList.activeNote.addText)
+            }
             else -> running = false
         }
 
