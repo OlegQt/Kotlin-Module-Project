@@ -4,6 +4,11 @@ class ArchiveList {
     // В переменной хранится номер активированного архива
     var activeNoteList:NoteList=NoteList()
 
+    init {
+        // ТЕСТОВАЯ ФУНКЦИЯ ДЛЯ ЗАПОЛНЕНИЯ АРХИВА
+        //this.fillArchive()
+    }
+
 
     // Lambda для выбора пунктов меню на экране списка архивов
     // 1 - создание нового архива
@@ -56,5 +61,15 @@ class ArchiveList {
 
         return str
         //return map.keys.toString()
+    }
+
+    private fun fillArchive(){
+        map["A"]=NoteList()
+        map["B"]=NoteList()
+        map["C"]=NoteList()
+        map["D"]=NoteList()
+
+        map["A"]?.noteList?.add(Note("Note A1","txt"))
+        map["D"]?.noteList?.add(Note("Note D1","txt in D-archive"))
     }
 }

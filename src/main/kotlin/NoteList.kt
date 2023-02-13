@@ -37,7 +37,7 @@ class NoteList() {
             index++
             menu += "${index}) - ${note.name} \n"
         }
-        menu += "${noteList.size + 1} - Go Back to Archive list"
+        menu += "${noteList.size + 1}) - Go Back to Archive list"
         println(menu)
     }
 
