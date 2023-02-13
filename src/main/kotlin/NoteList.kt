@@ -2,6 +2,11 @@ class NoteList() {
     val noteList: MutableSet<Note> = mutableSetOf()
     var activeNote: Note = Note("")
 
+    // Функция выбора пункта меню осуществляется только после корректного ввода
+    // Проверка корректности ввода в классе Input
+    // 0 - создание переходим на экран создания заметки
+    // от 1 до размера списка - переходим на экран показа заметки
+    // и последний переход на экран назад
     val choose: (n: Int) -> Unit = { n ->
         when (n) {
             0 -> ScreenMode.mode = ScreenMode.NOTE_CREATE
@@ -15,11 +20,13 @@ class NoteList() {
         }
     }
 
+    // Lambda для создания новой заметки
     val createSome: (name: String) -> Unit = { name ->
         this.noteList.add(Note(name))
         ScreenMode.mode = ScreenMode.NOTE_LIST
     }
 
+    // Lambda для отображения красивой менюшки и списка заметок на экране списка заметок
     val showMainMenu: () -> Unit = {
         var index = 0;
         println("-------Список ЗАМЕТОК-------")

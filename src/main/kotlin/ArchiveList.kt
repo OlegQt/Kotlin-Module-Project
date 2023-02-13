@@ -5,6 +5,11 @@ class ArchiveList {
     var activeNoteList:NoteList=NoteList()
 
 
+    // Lambda для выбора пунктов меню на экране списка архивов
+    // 1 - создание нового архива
+    // от 1 до размера map - выбор активного архива и переход на экран отображения заметок
+    // Последний пункт выводит на предыдущий экран, но в случае данного листа дает комманду
+    // на выход из пограммы
     val choose: (n: Int) -> Unit = { n ->
         when(n){
             0-> ScreenMode.mode=ScreenMode.ARCHIVE_CREATE

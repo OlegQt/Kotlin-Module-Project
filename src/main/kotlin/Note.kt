@@ -16,7 +16,7 @@ class Note(val name: String,private var text:String) {
         when (n) {
             0 -> ScreenMode.mode = ScreenMode.NOTE_EDIT
             1 -> ScreenMode.mode = ScreenMode.NOTE_LIST
-            else -> println("Заметки с номером $n нет в списке")
+            else -> println("Пункта меню $n нет в списке")
         }
     }
 
