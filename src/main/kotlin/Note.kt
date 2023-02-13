@@ -1,6 +1,7 @@
-class Note(val name: String) {
-    var text = ""
+class Note(val name: String,private var text:String) {
+    constructor(name: String) : this(name,"")
 
+    // Функция отображения земетки и навигационных заголовков (lambda)
     val showMainMenu: () -> Unit = {
         var str = ("-------ЗАМЕТКА $name-------\n")
         str += this.text
@@ -10,6 +11,7 @@ class Note(val name: String) {
         println(str)
     }
 
+    // Функция навигации по экрану заметки (lambda)
     val choose: (n: Int) -> Unit = { n ->
         when (n) {
             0 -> ScreenMode.mode = ScreenMode.NOTE_EDIT
@@ -18,6 +20,7 @@ class Note(val name: String) {
         }
     }
 
+    // Функция редактирования текста заметки (lambda)
     val addText: (text: String) -> Unit = { text ->
         this.text+="$text\n"
         ScreenMode.mode = ScreenMode.NOTE_SHOW

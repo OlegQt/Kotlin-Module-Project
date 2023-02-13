@@ -34,9 +34,6 @@ class NoteList() {
         println(menu)
     }
 
-    val testFunction: (t: Int) -> Unit = { t ->
-        println(t.toString())
-    }
 
     private fun setActive(number: Int): Note {
         var iterator = 0

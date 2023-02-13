@@ -1,6 +1,7 @@
 fun main() {
-    val archiveList = ArchiveList()
-    var running: Boolean = true
+    val archiveList = ArchiveList() // Список архивов хранится в этом экземпляре класса
+    var running = true // Условие проверки выхода из рпограммы
+
 
     while (running) {
         when (ScreenMode.mode) {
