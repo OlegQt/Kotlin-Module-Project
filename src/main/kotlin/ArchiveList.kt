@@ -14,7 +14,7 @@ class ArchiveList {
         when(n){
             0-> ScreenMode.mode=ScreenMode.ARCHIVE_CREATE
             in 1..map.size -> {
-                this.activeNoteList = setActive(n);
+                this.activeNoteList = setActive(n)
                 println("Chosen archive N$n - $activeNoteList")
                 ScreenMode.mode = ScreenMode.NOTE_LIST
             }
@@ -41,7 +41,7 @@ class ArchiveList {
     private fun setActive(number:Int):NoteList{
         var iterator = 0
         map.forEach { (s, noteList) ->
-            iterator++;
+            iterator++
             if (iterator==number) {
                 return noteList
             }
